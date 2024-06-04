@@ -1,0 +1,76 @@
+/* * {
+    border: solid salmon 1px;
+} */
+
+.search {
+    display: flex;
+    width: 50%;
+    margin: -65px 0 40px auto;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: gray 2px 2px 2px;
+}
+
+.search__option {
+    color: gray;
+    background-color: white;
+    margin: 5px;
+    padding: 0 20px;
+    border: none;
+}
+
+.search__option:nth-child(n + 2) {
+    border-left: gray 1px solid;
+}
+
+/* shops一覧 */
+.shops {
+    display: flex;
+    flex-wrap: wrap;
+}
+.shops-cards {
+    width: 22%;
+    height: 40vh;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: gray 2px 2px 2px;
+}
+
+.shops-cards__img {
+    width: 100%;
+    height: 55%;
+}
+
+.shops-cards__contents {
+    padding: 10px;
+    background-color: white;
+}
+.shops-cards__contents h2,
+p {
+    background-color: white;
+    margin: 0;
+}
+.shops-cards__contents h2 {
+    font-size: 18px;
+}
+.shops-cards__button{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.shops-cards__button-detail{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 20px ;
+}
+
+.shops-cards__favourite{
+    width: 40px;
+    margin-right: 20px;
+}
