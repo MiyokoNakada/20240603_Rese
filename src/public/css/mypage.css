@@ -1,0 +1,52 @@
+.user {
+    text-align: center;
+}
+
+.my_table {
+    display: flex;
+}
+
+.my_bookings {
+    width: 40%;
+    margin: 0 20px;
+}
+
+.my_bookings__card {
+    background-color: rgb(77, 77, 255);
+    padding: 40px;
+    border-radius: 5px;   
+    box-shadow: gray 2px 2px 2px;
+    position: relative;
+}
+
+.my_bookings__card p,
+button,
+table,
+tr,
+th,
+td {
+    background-color: rgb(77, 77, 255);
+    color: white;
+}
+
+.my_bookings__table-close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+.my_bookings__table{
+    margin-top: 20px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.my_bookings__table-label{
+    padding-right: 40px;
+}
+
+
+.my_favourites {
+    width: 60%;
+    margin: 0 20px;
+}

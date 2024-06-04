@@ -32,7 +32,7 @@
             <h2>{{ $shop->name }}</h2>
             <p>#{{ $shop->area->name }}   #{{ $shop->genre->name }}</p>
             <div class="shops-cards__button">
-            <button class="shops-cards__button-detail">詳しくみる</button>
+            <a class="shops-cards__button-detail" href="{{ url('/detail/' . $shop->id) }}">詳しくみる</a>
             <img class="shops-cards__favourite" src="{{ asset('img/favourite_heart.png') }}">
             </div>
         </div>
