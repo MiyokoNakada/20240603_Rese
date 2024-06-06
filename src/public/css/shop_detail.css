@@ -1,0 +1,109 @@
+
+.details{
+    display: flex;
+}
+
+.shop-detail{
+    width: 50%;
+    margin: 0px 30px 0 0;
+}
+
+.return{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;   
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+    transform: translate(0, -5px);
+}
+
+.shop-name{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.shop-img{
+    width: 100%;
+}
+
+.booking{
+    width: 50%;
+    margin: -40px 0 0 30px;
+}
+
+.booking-card{
+    width: 100%;
+    height: 100%;
+    padding: 40px 40px 0 40px;
+    background-color: rgb(100, 100, 255);
+    border-radius: 5px;   
+    box-shadow: gray 2px 2px 2px;
+}
+
+.booking-form{
+    height: 100%;
+    background-color: rgb(100, 100, 255);
+        margin-top: -20px;
+    position: relative;
+}
+
+.booking-form h2{
+    background-color: rgb(100, 100, 255);
+    color: white; 
+}
+
+.booking-date, .booking-time, .booking-number{
+    display: block;
+    height: 30px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px; 
+}
+.booking-date{
+    width: 30%;
+}
+.booking-time, .booking-number{
+    width: 100%;
+}
+
+.booking-confirm{
+    width: 95%;
+    padding: 20px;
+    background-color: rgb(77, 77, 255);
+    border-radius: 5px;
+}
+.my_bookings__table{
+    width: 100%;
+    border-radius: 5px;
+}
+.my_bookings__table tr, th, td{
+    background-color: rgb(77, 77, 255);
+    color: white;
+}
+.my_bookings__table th{
+    width: 20%;
+    font-weight: normal;
+    text-align: left;
+    line-height: 30px;
+}
+
+.booking-submit{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    width: calc(100% + 80px);
+    height: 60px;
+    margin: 0 -40px;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+}

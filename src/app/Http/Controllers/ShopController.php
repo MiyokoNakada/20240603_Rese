@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Shop;
+use App\Models\Booking;
 
 class ShopController extends Controller
 {
@@ -24,5 +25,13 @@ class ShopController extends Controller
     {
         $detail = Shop::find($shop_id);
         return view('shop_detail', compact('detail'));
+    }
+
+    //予約完了
+    public function done(Request $request){
+        $booking = $request -> all();
+        // dd($booking);
+        Booking::create($booking);
+        return view('done');
     }
 }
