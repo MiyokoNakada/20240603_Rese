@@ -1,0 +1,56 @@
+
+.auth-inner{
+    width: 450px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: gray 2px 2px 2px;
+}
+
+.auth-inner p{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    font-size: 20px;
+    padding: 20px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.auth-form__form *{
+    background-color: white;
+}
+
+.auth-form__item input{
+    width: 80%;
+    height: 40px;
+    margin-left: 40px;
+    padding-top: 10px;
+    border: none;
+    border-bottom: gray 1px solid;
+}
+.auth-form__submit{
+    display: flex;
+    justify-content: right;
+}
+
+.auth-form__btn{
+    display: inline-block;
+    width: fit-content;
+    height: 30px;
+    font-size: 14px;
+    background-color: rgb(77, 77, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 30px;
+}
+
+
+/* エラーメッセージ */
+.form__error{
+    color: red;
+    margin-left: 40px;
+}
+

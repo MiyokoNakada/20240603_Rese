@@ -1,3 +1,7 @@
+.mypage{
+    z-index: 0;
+}
+
 .user {
     text-align: center;
 }
@@ -8,11 +12,11 @@
 
 .my_bookings {
     width: 40%;
-    margin: 0 20px;
+    margin: 20px 20px 0 0;
 }
 
 .my_bookings__card {
-    background-color: rgb(77, 77, 255);
+    background-color: rgb(100, 100, 255);
     padding: 40px;
     border-radius: 5px;   
     box-shadow: gray 2px 2px 2px;
@@ -25,7 +29,7 @@ table,
 tr,
 th,
 td {
-    background-color: rgb(77, 77, 255);
+    background-color: rgb(100, 100, 255);
     color: white;
 }
 
@@ -48,5 +52,5 @@ td {
 
 .my_favourites {
     width: 60%;
-    margin: 0 20px;
+    margin: 20px 0 0 20px;
 }
