@@ -23,9 +23,19 @@
             <form class="booking-form" action="/done" method="post">
                 @csrf
                 <h2 class="booking-ttl">予約</h2>
-                <input type="hidden" name="user_id" value="{{ Auth::id }}">
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="shop_id" value="{{ $detail->id }}">
+                <div class="form__error">
+                    @error('date')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <input class="booking-date" type="date" name="date" value="{{ old('date') }}">
+                <div class="form__error">
+                    @error('time')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <select class="booking-time" name="time">
                     <option value="">選択してください</option>
                     @php
@@ -37,12 +47,17 @@
                         <option value="{{ $time->format('H:i') }}">{{ $time->format('H:i') }}</option>
                         @endfor
                 </select>
+                <div class="form__error">
+                    @error('people_number')
+                    {{ $message }}
+                    @enderror
+                </div>
                 <select class="booking-number" name="people_number">
                     <option value=""></option>
-                    @for ($i =1; $i <=10 ; $i++ ) 
-                        <option value="{{ $i}}">{{$i}} </option>
+                    @for ($i =1; $i <=10 ; $i++ ) <option value="{{ $i}}">{{$i}} </option>
                         @endfor
                 </select>
+
                 <div class="booking-confirm">
                     <table class="my_bookings__table">
                         <tr>

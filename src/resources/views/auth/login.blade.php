@@ -17,18 +17,18 @@
                 <div class="auth-form__item">
                     <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                     <div class="form__error">
-                    @error('email')
-                    {{ $message }}
-                    @enderror
-                </div>
+                        @error('email')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
                 <div class="auth-form__item">
                     <input type="password" name="password" placeholder="Password">
                     <div class="form__error">
-                    @error('password')
-                    {{ $message }}
-                    @enderror
-                </div>
+                        @error('password')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
                 <div class="auth-form__submit">
                     <input class="auth-form__btn" type="submit" value="ログイン">
