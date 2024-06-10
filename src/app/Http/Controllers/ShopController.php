@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\BookingRequest;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Shop;
@@ -15,7 +16,28 @@ class ShopController extends Controller
     {
         $areas = Area::all();
         $genres = Genre::all();
-        $shops = Shop::with('area')->with('genre')->get();
+        $shops = Shop::with('area', 'genre')->get();
+
+        return view('index', compact('areas', 'genres', 'shops'));
+    }
+
+    //検索機能
+    public function search(Request $request)
+    {
+        $areas = Area::all();
+        $genres = Genre::all();
+        $query = Shop::with('area', 'genre');
+
+        if ($request->filled('keyword')) {
+            $query->keywordSearch($request->input('keyword'));
+        }
+        if ($request->filled('area_id')) {
+            $query->areaSearch($request->input('area_id'));
+        }
+        if ($request->filled('genre_id')) {
+            $query->genreSearch($request->input('genre_id'));
+        }
+        $shops = $query->get();
 
         return view('index', compact('areas', 'genres', 'shops'));
     }
@@ -28,10 +50,12 @@ class ShopController extends Controller
     }
 
     //予約完了
-    public function done(Request $request){
-        $booking = $request -> all();
-        // dd($booking);
+    public function done(BookingRequest $request)
+    {
+        $booking = $request->all();
         Booking::create($booking);
-        return view('done');
+        $shop_id = $booking['shop_id'];
+
+        return view('done', compact('shop_id'));
     }
 }

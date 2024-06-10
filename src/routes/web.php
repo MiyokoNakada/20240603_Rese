@@ -18,12 +18,13 @@ use App\Http\Controllers\AuthController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
+    Route::get('/search', [ShopController::class, 'search']);
     Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
     Route::post('/done', [ShopController::class, 'done']);
     Route::get('/mypage', [MypageController::class, 'mypage']);
-    // Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('logout', [AuthController::class, 'logout']);
 });
 
-// Route::post('register', [AuthController::class, 'register']);
-// Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
 Route::get('/thanks', [AuthController::class, 'thanks']);

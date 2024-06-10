@@ -11,7 +11,7 @@
 <div class="done">
     <div class="done-inner">
         <p>ご予約ありがとうございます</p>
-        <a href="/">戻る</a>
+        <a href="{{ url('/detail', ['shop_id' => $shop_id]) }}">戻る</a>
     </div>
 </div>
 

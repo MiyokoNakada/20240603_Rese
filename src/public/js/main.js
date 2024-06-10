@@ -7,6 +7,15 @@ target.addEventListener("click", () => {
     nav.classList.toggle("in");
 });
 
+//search function
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.search__option').forEach(function(element) {
+        element.addEventListener('change', function() {
+            document.querySelector('.admin__search-form').submit();
+        });
+    });
+});
+
 //booking confirmation
 document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.querySelector('.booking-date');
@@ -20,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dateInput.addEventListener('input', () => {
         displayDate.textContent = dateInput.value || '0000-00-00';
     });
-
+-
     timeInput.addEventListener('input', () => {
         displayTime.textContent = timeInput.value || '00:00';
     });

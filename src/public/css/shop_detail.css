@@ -107,3 +107,10 @@
     position: absolute;
     bottom: 0;
 }
+
+
+/* エラーメッセージ */
+.form__error{
+    color: red;
+    background-color: rgb(100, 100, 255);
+}

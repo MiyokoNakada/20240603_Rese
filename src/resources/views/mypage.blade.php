@@ -10,49 +10,40 @@
 @endcomponent
 <div class="mypage">
     <div class="user">
-        <h2>test さん</h2>
+        <h2>{{ Auth::user()->name }} さん</h2>
     </div>
     <div class="my_table">
         <div class="my_bookings">
             <h3>予約状況</h3>
+            @foreach($bookings as $booking)
             <div class="my_bookings__card">
                 <p class="my_bookings__table-ttl">予約1</p>
                 <button class="my_bookings__table-close">×</button>
                 <table class="my_bookings__table">
                     <tr>
                         <th class="my_bookings__table-label">Shop</th>
-                        <td class="my_bookings__table-item">店名</td>
+                        <td class="my_bookings__table-item">{{ $booking->shop->name}}</td>
                     </tr>
                     <tr>
                         <th class="my_bookings__table-label">Date</th>
-                        <td class="my_bookings__table-item">日付</td>
+                        <td class="my_bookings__table-item">{{ $booking->date }}</td>
                     </tr>
                     <tr>
                         <th class="my_bookings__table-label">Time</th>
-                        <td class="my_bookings__table-item">何時</td>
+                        <td class="my_bookings__table-item">{{ $booking->formatted_time }}</td>
                     </tr>
                     <tr>
                         <th class="my_bookings__table-label">Number</th>
-                        <td class="my_bookings__table-item">何人</td>
+                        <td class="my_bookings__table-item">{{ $booking->people_number }}</td>
                     </tr>
                 </table>
             </div>
+            @endforeach
         </div>
 
         <div class="my_favourites">
             <h3>お気に入り店舗</h3>
             <div class="shops">
-                <div class="shops-cards">
-                    <img class="shops-cards__img" src="{{ asset('storage/image/sushi.jpg') }}" alt="">
-                    <div class="shops-cards__contents">
-                        <h2>shopname</h2>
-                        <p>#area #genre</p>
-                        <div class="shops-cards__button">
-                            <button class="shops-cards__button-detail">詳しくみる</button>
-                            <img class="shops-cards__favourite" src="{{ asset('img/favourite_heart.png') }}">
-                        </div>
-                    </div>
-                </div>
                 <div class="shops-cards">
                     <img class="shops-cards__img" src="{{ asset('storage/image/sushi.jpg') }}" alt="">
                     <div class="shops-cards__contents">
