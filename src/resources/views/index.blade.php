@@ -9,7 +9,7 @@
 @endcomponent
 
 <div class="search">
-    <form class="admin__search-form" action="/search" method="get">
+    <form class="search__form" action="/search" method="get">
         @csrf
         <select class="search__option" name="area_id">
             <option value="">All area</option>
@@ -23,8 +23,8 @@
             <option value="{{ $genre->id }}" {{ request('genre_id') == $genre->id ? 'selected' : '' }}>{{ $genre->name }}</option>
             @endforeach
         </select>
-         <input class="search__option" type="text" name="keyword" placeholder="Search..." value="{{ request('keyword') }}">
-        <button type="submit">Search</button>
+        <button class="search__submit" type=" submit"><i class="search__submit_icon fa-solid fa-magnifying-glass fa-lg"></i></button>
+        <input class="search__option" type="text" name="keyword" placeholder="Search..." value="{{ request('keyword') }}">
     </form>
 </div>
 
@@ -37,7 +37,13 @@
             <p>#{{ $shop->area->name }} #{{ $shop->genre->name }}</p>
             <div class="shops-cards__button">
                 <a class="shops-cards__button-detail" href="{{ url('/detail/' . $shop->id) }}">詳しくみる</a>
-                <img class="shops-cards__favourite" src="{{ asset('img/favourite_heart.png') }}">
+                <form class="shops-cards__favourite-form">
+                    @if($shop->favourites->contains('user_id', Auth::id()))
+                    <i class="shops-cards__favourite fa-solid fa-heart fa-2xl favourited" data-user-id="{{ Auth::user()->id }}" data-shop-id="{{ $shop->id }}"></i>
+                    @else
+                    <i class="shops-cards__favourite fa-solid fa-heart fa-2xl" data-user-id="{{ Auth::user()->id }}" data-shop-id="{{ $shop->id }}"></i>
+                    @endif
+                </form>
             </div>
         </div>
     </div>

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookingController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
     Route::get('/search', [ShopController::class, 'search']);
     Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
-    Route::post('/done', [ShopController::class, 'done']);
+    Route::post('/done', [BookingController::class, 'done']);
     Route::get('/mypage', [MypageController::class, 'mypage']);
+    Route::post('/favourite', [MypageController::class, 'favourite']);
+    Route::post('/unfavourite', [MypageController::class, 'unfavourite']);
     Route::post('logout', [AuthController::class, 'logout']);
 });
 

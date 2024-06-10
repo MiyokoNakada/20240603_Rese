@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\BookingRequest;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Shop;
-use App\Models\Booking;
 
 class ShopController extends Controller
 {
@@ -49,13 +47,4 @@ class ShopController extends Controller
         return view('shop_detail', compact('detail'));
     }
 
-    //予約完了
-    public function done(BookingRequest $request)
-    {
-        $booking = $request->all();
-        Booking::create($booking);
-        $shop_id = $booking['shop_id'];
-
-        return view('done', compact('shop_id'));
-    }
 }

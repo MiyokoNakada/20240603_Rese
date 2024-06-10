@@ -25,6 +25,11 @@ class Shop extends Model
         return $this->belongsTo(Genre::class);
     }
 
+    public function favourites()
+    {
+        return $this->hasMany(Favourite::class);
+    }
+
     //検索用のローカルスコープ
     public function scopeKeywordSearch($query, $keyword)
     {

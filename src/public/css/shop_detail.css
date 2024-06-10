@@ -111,6 +111,6 @@
 
 /* エラーメッセージ */
 .form__error{
-    color: red;
+    color: rgb(255, 180, 180);
     background-color: rgb(100, 100, 255);
 }

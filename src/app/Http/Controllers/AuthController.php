@@ -23,8 +23,6 @@ use Laravel\Fortify\Features;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 
-
-
 class AuthController extends Controller
 {
 
@@ -42,7 +40,6 @@ class AuthController extends Controller
         }
 
         event(new Registered($user = $creator->create($request->all())));
-
         // $this->guard->login($user);
 
         return app(RegisterResponse::class);

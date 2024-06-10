@@ -16,6 +16,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+//favourite function
+document.addEventListener('DOMContentLoaded', function() {
+    const favouriteButtons = document.querySelectorAll('.shops-cards__favourite');
+
+    favouriteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const userId = this.dataset.userId;
+            const shopId = this.dataset.shopId;
+            const isFavourited = this.classList.contains('favourited');
+
+            const url = isFavourited ? '/unfavourite' : '/favourite';
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    user_id: userId,
+                    shop_id: shopId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    this.classList.toggle('favourited');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+});
+
+
+
 //booking confirmation
 document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.querySelector('.booking-date');
@@ -38,3 +75,4 @@ document.addEventListener('DOMContentLoaded', () => {
         displayNumber.textContent = numberInput.value || '0人';
     });
 });
+

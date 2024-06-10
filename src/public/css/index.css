@@ -1,23 +1,40 @@
+
 .search {
     display: flex;
     width: 50%;
     margin: -65px 0 40px auto;
-    height: 40px;
-    background-color: white;
+    height: 40px;    
     border-radius: 5px;
     box-shadow: gray 2px 2px 2px;
 }
 
+.search *{
+    background-color: white;    
+}
+
+.search__form{
+    width: 100%;     
+    border-radius: 5px;
+}
+
 .search__option {
+    height: 30px;
     color: gray;
-    background-color: white;
     margin: 5px;
     padding: 0 20px;
     border: none;
 }
 
-.search__option:nth-child(n + 2) {
-    border-left: gray 1px solid;
+.search__option:nth-child(2),.search__option:nth-child(3) {
+    border-right: gray 1px solid;
+}
+
+.search__submit{
+    border: none;  
+}
+
+.search__submit_icon{
+    color: gray;
 }
 
 /* shops一覧 */
@@ -69,7 +86,18 @@ p {
     padding: 6px 20px ;
 }
 
+.shops-cards__favourite-form{
+    background-color: white;
+}
+
 .shops-cards__favourite{
     width: 40px;
     margin-right: 20px;
+    color: rgb(223, 223, 223);
+    background-color: white;
+    cursor: pointer;
+}
+
+.shops-cards__favourite.favourited {
+    color: rgb(255, 120, 120);
 }
