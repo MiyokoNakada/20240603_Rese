@@ -1,13 +1,15 @@
-# 20240603_Rese
-# Atte
+# Rese
 
 飲食店予約サービス
 自社にて予約サービスを運営するため作成しました  
 <br>
-＜トップページ＞  
-<img src="" width=70%>
+＜トップページ＞  <br>
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/67386f11-aea5-4975-89ca-3f0c71687fb6" width=70%><br>
+＜店舗詳細ページ＞<br>
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/bb0e9f5b-3828-49af-bc49-25bf9cd71455" width=70%><br>
+＜マイページ＞ <br>
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/7cd64d7f-f8a3-446b-9b7d-7baebe525ed3" width=70%><br>
 <br>
-
 ## URL
 
 - 本番環境：http://  
@@ -42,17 +44,17 @@ https://github.com/MiyokoNakada/20240603_Rese
 
 ## テーブル設計
 
-<img src="" width=60%> 
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/66004375-1ea0-4426-8a4f-c036ff869ce2" width=50%> 
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/9cf360e5-a511-48cd-9971-bbb0f422e37f" width=50%>
 <br>
 
 ## ER 図
-
-
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/0aedaad9-0f22-4f58-ab27-042434abfd70" width=70%>
 <br>
 
 ## 環境構築
 
-### 開発環境のセットアップ
+### (1)開発環境のセットアップ
 
 #### 前提条件
 
@@ -114,7 +116,7 @@ https://github.com/MiyokoNakada/20240603_Rese
    php artisan migrate
    ```
 
-### 本番環境のセットアップ
+### (2)本番環境のセットアップ
 
 #### 前提条件
 
