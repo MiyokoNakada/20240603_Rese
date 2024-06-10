@@ -11,7 +11,7 @@ target.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.search__option').forEach(function(element) {
         element.addEventListener('change', function() {
-            document.querySelector('.admin__search-form').submit();
+            document.querySelector('.search__form').submit();
         });
     });
 });

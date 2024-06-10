@@ -22,13 +22,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
     Route::get('/search', [ShopController::class, 'search']);
     Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
-    Route::post('/done', [BookingController::class, 'done']);
+    Route::post('/done', [BookingController::class, 'bookingDone']);
+    Route::post('/booking_delete', [BookingController::class, 'bookingDelete'] );
     Route::get('/mypage', [MypageController::class, 'mypage']);
     Route::post('/favourite', [MypageController::class, 'favourite']);
     Route::post('/unfavourite', [MypageController::class, 'unfavourite']);
     Route::post('logout', [AuthController::class, 'logout']);
 });
 
-Route::post('register', [AuthController::class, 'register']);
-Route::post('login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 Route::get('/thanks', [AuthController::class, 'thanks']);

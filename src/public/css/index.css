@@ -6,10 +6,12 @@
     height: 40px;    
     border-radius: 5px;
     box-shadow: gray 2px 2px 2px;
+    position: relative; 
+    z-index: 30;
 }
 
 .search *{
-    background-color: white;    
+    background-color: white;   
 }
 
 .search__form{
@@ -61,6 +63,7 @@
 
 .shops-cards__contents {
     padding: 10px;
+    padding-left: 20px;
     background-color: white;
 }
 .shops-cards__contents h2,

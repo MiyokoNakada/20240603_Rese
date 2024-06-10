@@ -9,9 +9,8 @@ use App\Models\Booking;
 
 class BookingController extends Controller
 {
-
     //予約登録+予約完了画面表示
-    public function done(BookingRequest $request)
+    public function bookingDone(BookingRequest $request)
     {
         $booking = $request->all();
         Booking::create($booking);
@@ -19,4 +18,12 @@ class BookingController extends Controller
 
         return view('done', compact('shop_id'));
     }
+
+    //予約削除
+    public function bookingDelete(Request $request){
+        Booking::find($request->id)->delete();
+
+        return redirect('/mypage');
+    }
+
 }
