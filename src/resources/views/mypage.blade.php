@@ -21,7 +21,13 @@
                     <i class="fa-regular fa-clock fa-lg"></i>
                     予約{{ $index + 1 }}
                 </p>
-                <button class="my_bookings__table-close"><i class="fa-regular fa-circle-xmark fa-xl"></i></button>
+                <form action="/booking_delete" method="post">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $booking->id }}">
+                    <button class="my_bookings__table-delete">
+                        <i class="fa-regular fa-circle-xmark fa-xl"></i>
+                    </button>
+                </form>
                 <table class="my_bookings__table">
                     <tr>
                         <th class="my_bookings__table-label">Shop</th>
@@ -40,6 +46,7 @@
                         <td class="my_bookings__table-item">{{ $booking->people_number }}</td>
                     </tr>
                 </table>
+
             </div>
             @endforeach
         </div>

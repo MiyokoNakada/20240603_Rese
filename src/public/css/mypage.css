@@ -1,7 +1,3 @@
-.mypage{
-    z-index: 0;
-}
-
 .user {
     text-align: center;
 }
@@ -12,7 +8,7 @@
 
 .my_bookings {
     width: 40%;
-    margin: 20px 20px 0 0;
+    margin: 10px 20px 0 0;
 }
 
 .my_bookings__card {
@@ -29,13 +25,14 @@
     color: white;
 }
 
-.my_bookings__table-close{
+.my_bookings__table-delete{
     position: absolute;
     top: 30px;
     right: 30px;
     border: none;
     cursor: pointer;
 }
+
 .my_bookings__table{
     margin-top: 20px;
     text-align: left;
@@ -49,5 +46,10 @@
 
 .my_favourites {
     width: 60%;
-    margin: 20px 0 0 20px;
+    margin: 10px 0 0 20px;
+}
+
+.shops-cards{
+    margin-right: 20px;
+    margin-bottom: 20px;
 }

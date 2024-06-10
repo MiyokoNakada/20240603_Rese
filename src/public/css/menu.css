@@ -1,6 +1,8 @@
 
 .drower-menu{
+  position: relative;
    display: flex;
+   z-index: 20;
 }
 
 a{
