@@ -1,0 +1,43 @@
+
+.admin-ttl{
+        color: rgb(77, 77, 255);
+    border: rgb(77, 77, 255) solid 1px;
+    width: fit-content;
+}
+
+.create-manager {
+    margin-bottom: 20px;
+}
+
+.create-manager form input{
+height: 40px;
+border: none;
+    border-radius: 5px; 
+}
+
+.create-manager form> input:not(.create-manager_submit-btn){
+        padding-left:10px;
+        background-color: white;
+}
+
+.create-manager_submit-btn{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    font-size: 16px;
+    padding:0 20px;
+}
+
+.manager-table__inner{
+    width: 50%;
+}
+
+.manager-table__header_item{
+    height:40px;
+    border-bottom: double 1px gray;
+}
+
+.manager-table__content_item{
+    height: 30px;
+    padding-left: 20px;
+    border-bottom: solid 1px gray;
+}
