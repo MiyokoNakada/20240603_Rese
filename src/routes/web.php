@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['middleware' => ['auth', 'can:shop_manager']], function () {
         Route::get('/shop_manager', [ShopManagerController::class, 'shopManager']);
+        Route::get('/shop_manager/update_detail', [ShopManagerController::class, 'showShopDetail']);
+        Route::post('/shop_manager/update_detail', [ShopManagerController::class, 'updateShopDetail']);
     });
 
     Route::post('logout', [AuthController::class, 'logout']);

@@ -5,8 +5,12 @@
 @endsection
 
 @section('content')
+
 @component('components.menu2')
 @endcomponent
+<div class="alart">
+    {{ session('access-alart') }}
+</div>
 
 <div class="admin">
     <h2 class="admin-ttl">管理者用画面</h2>
@@ -21,7 +25,7 @@
             <input type="text" name="shop_name" placeholder="Shop name" value="{{ old('shop_name') }}">
             <input class="create-manager_submit-btn" type="submit" value="登録">
         </form>
-        <div class="create-manager__alert">
+        <div class="create-manager__alart">
             {{ session('message') }}
         </div>
     </div>
