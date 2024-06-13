@@ -1,7 +1,12 @@
+.alart{
+    color: red;
+    background-color: azure;
+}
+
 
 .admin-ttl{
         color: rgb(77, 77, 255);
-    border: rgb(77, 77, 255) solid 1px;
+    background: linear-gradient(transparent 70%, rgba(77, 77, 255, 0.5) 70%);
     width: fit-content;
 }
 

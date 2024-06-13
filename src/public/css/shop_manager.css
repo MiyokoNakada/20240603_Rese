@@ -1,0 +1,59 @@
+.shop_manager-ttl{
+        color: rgb(77, 77, 255);
+    background: linear-gradient(transparent 70%, rgba(77, 77, 255, 0.5) 70%);
+    width: fit-content;
+}
+
+.shop_manager__inner{
+    display: flex;
+}
+
+.shop-info,
+.booking-info{
+    width: 50%;
+}
+
+.shop-info__table{
+    width: 90%;
+}
+
+.shop-info__table *{
+background-color: white;
+}
+
+.shop-info__table tr:not(:last-child){
+border-bottom: gray solid 1px;
+}
+
+.shop-info__table th{
+    width: 20%;
+    height: 40px;    
+}
+
+.shop-info__table td{
+    padding-left: 10px;
+}
+
+.booking-info__table{
+    width: 90%;
+}
+
+
+.booking-info__table *{
+background-color: white;
+}
+
+.booking-info__table tr:not(:last-child){
+border-bottom: gray solid 1px;
+}
+
+.booking-info__table th{
+    text-align: left;
+    padding-left: 10px;
+    height: 40px;
+}
+
+.booking-info__table td{
+    padding-left: 10px;
+    height: 30px;
+}
