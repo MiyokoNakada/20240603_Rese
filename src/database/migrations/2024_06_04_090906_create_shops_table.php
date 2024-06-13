@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->foreignID('area_id')->constrained();
             $table->foreignID('genre_id')->constrained();
-            $table->text('description');
-            $table->string('image');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

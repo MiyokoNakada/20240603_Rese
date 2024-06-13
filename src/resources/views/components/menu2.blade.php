@@ -13,6 +13,16 @@
         @endif
       </li>
       <li><a href="/mypage">Mypage</a></li>
+      <li>
+        @can ('admin')
+        <a class="admin-link" href="/admin">管理者用ページ</a>
+        @endcan
+      </li>
+      <li>
+        @can ('shop_manager')
+        <a class="admin-link" href="/shop_manager">店舗代表者用ページ</a>
+        @endcan
+      </li>
     </ul>
   </nav>
   <div class="menu" id="menu">
