@@ -43,9 +43,9 @@ class MypageController extends Controller
             $favourite->user_id = $user_id;
             $favourite->shop_id = $shop_id;
             $favourite->save();
-            return response()->json(['success' => true, 'message' => 'Added to favourites']);
+            return response()->json(['success' => true]);
         }
-        return response()->json(['success' => false, 'message' => 'Already in favourites']);
+        return response()->json(['success' => false]);
     }
 
     //お気に入り削除
@@ -60,9 +60,9 @@ class MypageController extends Controller
 
         if ($existingFavourite) {
             $existingFavourite->delete();
-            return response()->json(['success' => true, 'message' => 'Removed from favourites']);
+            return response()->json(['success' => true]);
         }
 
-        return response()->json(['success' => false, 'message' => 'Not in favourites']);
+        return response()->json(['success' => false]);
     }
 }

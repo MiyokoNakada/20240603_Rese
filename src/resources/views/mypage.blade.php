@@ -15,19 +15,28 @@
     <div class="my_table">
         <div class="my_bookings">
             <h3>予約状況</h3>
+            <div class="booking_change__alart">
+                {{ session('message') }}
+            </div>
+
             @foreach($bookings as $index => $booking)
             <div class="my_bookings__card">
                 <p class="my_bookings__table-ttl">
                     <i class="fa-regular fa-clock fa-lg"></i>
                     予約{{ $index + 1 }}
                 </p>
-                <form action="/booking_delete" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $booking->id }}">
-                    <button class="my_bookings__table-delete">
-                        <i class="fa-regular fa-circle-xmark fa-xl"></i>
-                    </button>
-                </form>
+                <div class="my_bookings__btn">
+                    <form action="/booking_change" method="get">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $booking->id }}">
+                        <button class="my_bookings__table-change">変更</button>
+                    </form>
+                    <form action="/booking_delete" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $booking->id }}">
+                        <button class="my_bookings__table-delete">取消し</button>
+                    </form>
+                </div>
                 <table class="my_bookings__table">
                     <tr>
                         <th class="my_bookings__table-label">Shop</th>

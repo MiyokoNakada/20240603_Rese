@@ -1,7 +1,12 @@
+
 .shop_manager-ttl{
-        color: rgb(77, 77, 255);
+    color: rgb(77, 77, 255);
     background: linear-gradient(transparent 70%, rgba(77, 77, 255, 0.5) 70%);
     width: fit-content;
+}
+
+.create-shop__alart{
+    color: red;
 }
 
 .shop_manager__inner{
@@ -13,16 +18,28 @@
     width: 50%;
 }
 
+.shop-info__update-btn{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    font-size: 16px;
+    padding:0 20px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
 .shop-info__table{
     width: 90%;
+    margin-bottom: 20px;
 }
 
 .shop-info__table *{
-background-color: white;
+    background-color: white;
 }
 
 .shop-info__table tr:not(:last-child){
-border-bottom: gray solid 1px;
+    border-bottom: gray solid 1px;
 }
 
 .shop-info__table th{
@@ -34,17 +51,29 @@ border-bottom: gray solid 1px;
     padding-left: 10px;
 }
 
+.shop-info__table input, select, textarea{
+    border-radius: 5px;
+    padding: 0 10px;
+}
+.shop-info__table input, select{
+    height: 30px;
+}
+.shop-info__table textarea{
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+
 .booking-info__table{
     width: 90%;
 }
 
-
 .booking-info__table *{
-background-color: white;
+    background-color: white;
 }
 
 .booking-info__table tr:not(:last-child){
-border-bottom: gray solid 1px;
+    border-bottom: gray solid 1px;
 }
 
 .booking-info__table th{
@@ -56,4 +85,35 @@ border-bottom: gray solid 1px;
 .booking-info__table td{
     padding-left: 10px;
     height: 30px;
+}
+
+
+.return{
+    display: inline-block;
+    background-color: rgb(77, 77, 255);
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    padding:8px 20px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+
+.shop_detail_update-btn,
+.shop-info_create-btn{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    font-size: 16px;
+    padding:0 20px;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px 0;
+}
+
+.error{
+    color: red;
 }

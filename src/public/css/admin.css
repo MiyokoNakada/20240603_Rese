@@ -1,11 +1,9 @@
 .alart{
     color: red;
-    background-color: azure;
 }
 
-
 .admin-ttl{
-        color: rgb(77, 77, 255);
+    color: rgb(77, 77, 255);
     background: linear-gradient(transparent 70%, rgba(77, 77, 255, 0.5) 70%);
     width: fit-content;
 }
@@ -15,14 +13,14 @@
 }
 
 .create-manager form input{
-height: 40px;
-border: none;
+    height: 40px;
+    border: none;
     border-radius: 5px; 
 }
 
 .create-manager form> input:not(.create-manager_submit-btn){
-        padding-left:10px;
-        background-color: white;
+    padding-left:10px;
+    background-color: white;
 }
 
 .create-manager_submit-btn{
@@ -30,6 +28,10 @@ border: none;
     color: white;
     font-size: 16px;
     padding:0 20px;
+}
+
+.manager-table{    
+    margin-bottom: 40px;
 }
 
 .manager-table__inner{
