@@ -11,6 +11,31 @@
     margin: 10px 20px 0 0;
 }
 
+.my_bookings h3{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.booking_change__alart{
+    color: red;
+}
+
+.return{    
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+    transform: translate(0, -5px);
+    position: relative;
+    z-index: 10;
+}
+
 .my_bookings__card {
     background-color: rgb(100, 100, 255);
     padding: 40px;
@@ -25,12 +50,26 @@
     color: white;
 }
 
-.my_bookings__table-delete{
+.my_bookings__btn{
     position: absolute;
     top: 30px;
     right: 30px;
+}
+
+.my_bookings__table-delete,
+.my_bookings__table-change{
+    width: 80px;
+    background-color: white;
+    color: rgb(100, 100, 255);
+    font-weight: bold;
+    margin-bottom: 5px; 
+    padding: 5px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+}
+.my_bookings__table-change{
+    margin-top: 10px;
 }
 
 .my_bookings__table{
@@ -41,6 +80,12 @@
 
 .my_bookings__table-label{
     padding-right: 40px;
+}
+
+.my_bookings__table-item input, 
+select{
+    font-size: 16px;
+    border: none;
 }
 
 

@@ -1,3 +1,7 @@
+/* *{
+    border: salmon solid 1px;
+}
+ */
 
 .auth-inner{
     width: 450px;
@@ -23,11 +27,37 @@
 .auth-form__item input{
     width: 80%;
     height: 40px;
-    margin-left: 40px;
+    margin-left: 60px;
     padding-top: 10px;
     border: none;
     border-bottom: gray 1px solid;
 }
+
+.auth-form__item{
+    position: relative;
+}
+
+.auth-form__item-name::before{
+    content: "\f007";
+}
+.auth-form__item-email::before{
+    content: "\f0e0";
+}
+.auth-form__item-password::before{
+    content: "\f023";
+}
+.auth-form__item-name::before,
+.auth-form__item-email::before,
+.auth-form__item-password::before{
+    font: var(--fa-font-solid);
+    font-size: 24px;
+    color: gray;
+    margin-left: 30px;
+    position: absolute;    
+        top: 15px;
+}
+
+
 .auth-form__submit{
     display: flex;
     justify-content: right;

@@ -15,19 +15,23 @@
             <form class="auth-form__form" action="/login" method="post">
                 @csrf
                 <div class="auth-form__item">
-                    <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
-                    <div class="form__error">
-                        @error('email')
-                        {{ $message }}
-                        @enderror
+                    <div class="auth-form__item-email">
+                        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                        <div class="form__error">
+                            @error('email')
+                            {{ $message }}  
+                            @enderror
+                        </div>
                     </div>
                 </div>
                 <div class="auth-form__item">
-                    <input type="password" name="password" placeholder="Password">
-                    <div class="form__error">
-                        @error('password')
-                        {{ $message }}
-                        @enderror
+                    <div class="auth-form__item-password">
+                        <input type="password" name="password" placeholder="Password">
+                        <div class="form__error">
+                            @error('password')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
                 <div class="auth-form__submit">

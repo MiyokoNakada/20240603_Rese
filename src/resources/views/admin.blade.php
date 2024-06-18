@@ -19,10 +19,11 @@
         <h3>店舗代表者作成</h3>
         <form class="create-manager__form" action="/admin/add_manager" method="post">
             @csrf
+            <!-- <input type="text" name="shop_name" placeholder="Shop name" value="{{ old('shop_name') }}"> -->
             <input type="text" name="name" placeholder="Manager name" value="{{ old('name') }}">
             <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
             <input type="password" name="password" placeholder="Password">
-            <input type="text" name="shop_name" placeholder="Shop name" value="{{ old('shop_name') }}">
+            <input type="hidden" name="role" value="2">
             <input class="create-manager_submit-btn" type="submit" value="登録">
         </form>
         <div class="create-manager__alart">
