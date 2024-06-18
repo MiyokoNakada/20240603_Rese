@@ -1,6 +1,7 @@
 .search {
     display: flex;
-    width: 50%;
+    flex-wrap: wrap;
+    width: 50vw;
     margin: -65px 0 40px auto;
     height: 40px;    
     border-radius: 5px;
@@ -8,6 +9,15 @@
     position: relative; 
     z-index: 30;
 }
+@media screen and (max-width: 768px) {
+  .search {
+    width:90vw;
+    margin: 0;
+    position: relative; 
+    z-index: 10;
+  }
+}
+
 
 .search *{
     background-color: white;   
@@ -42,7 +52,9 @@
 .shops {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
+
 .shops-cards {
     width: 300px;
     height: 280px;

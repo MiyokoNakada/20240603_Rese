@@ -11,7 +11,7 @@
 <div class="booking_change">
 
     <div class="my_table">
-        <div class="my_bookings">
+        <div class="my_bookings-change">
             <a href='/mypage' class="return"> &lt;</a>
             <h3>予約変更</h3>
 
@@ -34,6 +34,7 @@
                             <th class="my_bookings__table-label">Date</th>
                             <td class="my_bookings__table-item">
                                 <input type="date" name="date" value="{{ $booking->date }}">
+                                <span class="error">@error('date'){{ $message }}@enderror</span>
                             </td>
                         </tr>
                         <tr>
@@ -50,6 +51,7 @@
                                         <option value="{{ $time->format('H:i') }}">{{ $time->format('H:i') }}</option>
                                         @endfor
                                 </select>
+                                <span class="error">@error('time'){{ $message }}@enderror</span>
                             </td>
                         </tr>
                         <tr>
@@ -60,6 +62,7 @@
                                     @for ($i =1; $i <=10 ; $i++ ) <option value="{{ $i}}">{{$i}} </option>
                                         @endfor
                                 </select>
+                                <span class="error">@error('people_number'){{ $message }}@enderror</span>
                             </td>
                         </tr>
                     </table>
