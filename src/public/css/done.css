@@ -16,6 +16,12 @@
     border-radius: 5px;
 }
 
+.email-verify{
+    font-size: 12px;
+    background-color: white;
+    padding: 0;
+}
+
 .done-inner a{
     display: inline-block;
     width: fit-content;

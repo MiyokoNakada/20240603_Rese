@@ -22,6 +22,7 @@ class AdminController extends Controller
     {
         $form = $request->all();
         User::create($form);
+
         
         return redirect('admin')->with('message', '店舗代表者を作成しました');
     }

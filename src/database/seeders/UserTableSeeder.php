@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Carbon\Carbon;
 
 class UserTableSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class UserTableSeeder extends Seeder
             'email' => 'admin@email.com',
             'password' => Hash::make('admin_pass'),
             'role' => '1',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
 
@@ -30,6 +32,7 @@ class UserTableSeeder extends Seeder
             'email' => 'sennin@email.com',
             'password' => Hash::make('sennin_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -37,6 +40,7 @@ class UserTableSeeder extends Seeder
             'email' => 'gyusuke@email.com',
             'password' => Hash::make('gyusuke_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -44,6 +48,7 @@ class UserTableSeeder extends Seeder
             'email' => 'senritsu@email.com',
             'password' => Hash::make('senritsu_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -51,6 +56,7 @@ class UserTableSeeder extends Seeder
             'email' => 'ruke@email.com',
             'password' => Hash::make('ruke_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -58,6 +64,7 @@ class UserTableSeeder extends Seeder
             'email' => 'shimaya@email.com',
             'password' => Hash::make('shimaya_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -65,6 +72,7 @@ class UserTableSeeder extends Seeder
             'email' => 'kaori@email.com',
             'password' => Hash::make('kaori_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -72,6 +80,7 @@ class UserTableSeeder extends Seeder
             'email' => 'jj@email.com',
             'password' => Hash::make('jj_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -79,6 +88,7 @@ class UserTableSeeder extends Seeder
             'email' => 'ramenkiwami@email.com',
             'password' => Hash::make('ramenkiwami_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -86,6 +96,7 @@ class UserTableSeeder extends Seeder
             'email' => 'toriu@email.com',
             'password' => Hash::make('toriu_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -93,6 +104,7 @@ class UserTableSeeder extends Seeder
             'email' => 'tsukidiiroai@email.com',
             'password' => Hash::make('tsukidiiroai_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -100,6 +112,7 @@ class UserTableSeeder extends Seeder
             'email' => 'harumi@email.com',
             'password' => Hash::make('harumi_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -107,6 +120,7 @@ class UserTableSeeder extends Seeder
             'email' => 'sanshi@email.com',
             'password' => Hash::make('sanshi_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -114,6 +128,7 @@ class UserTableSeeder extends Seeder
             'email' => 'hakkai@email.com',
             'password' => Hash::make('hakkai_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -121,6 +136,7 @@ class UserTableSeeder extends Seeder
             'email' => 'hukusuke@email.com',
             'password' => Hash::make('hukusuke_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -128,6 +144,7 @@ class UserTableSeeder extends Seeder
             'email' => 'rakita@email.com',
             'password' => Hash::make('rakita_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -135,6 +152,7 @@ class UserTableSeeder extends Seeder
             'email' => 'sho@email.com',
             'password' => Hash::make('sho_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -142,6 +160,7 @@ class UserTableSeeder extends Seeder
             'email' => 'keii@email.com',
             'password' => Hash::make('keii_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -149,6 +168,7 @@ class UserTableSeeder extends Seeder
             'email' => 'urushi@email.com',
             'password' => Hash::make('urushi_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -156,6 +176,7 @@ class UserTableSeeder extends Seeder
             'email' => 'thetool@email.com',
             'password' => Hash::make('thetool_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
         $param = [
@@ -163,6 +184,7 @@ class UserTableSeeder extends Seeder
             'email' => 'kibune@email.com',
             'password' => Hash::make('kibune_pass'),
             'role' => '2',
+            'email_verified_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
     }
