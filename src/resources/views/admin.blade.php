@@ -24,6 +24,7 @@
             <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
             <input type="password" name="password" placeholder="Password">
             <input type="hidden" name="role" value="2">
+            <input type="hidden" name="email_verified_at" value="{{ now() }}">
             <input class="create-manager_submit-btn" type="submit" value="登録">
         </form>
         <div class="create-manager__alart">

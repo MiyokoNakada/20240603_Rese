@@ -5,14 +5,32 @@
 .my_table {
     display: flex;
 }
+@media screen and (max-width: 768px) {
+    .my_table{
+        display: block;
+    }
+}
 
 .my_bookings {
     width: 40%;
     margin: 10px 20px 0 0;
 }
+@media screen and (max-width: 768px) {
+    .my_bookings{
+        width: 100%;
+        margin: 0 0 20px 0;     
+    }
+}
+
 .my_bookings-change{
     width: 50%;
     margin: 10px 20px 0 0;
+}
+@media screen and (max-width: 768px) {
+    .my_bookings-change{
+        width: 100%;
+        margin: 0 0 20px 0;     
+    }
 }
 
 .my_bookings a, h3{
@@ -96,6 +114,12 @@ select{
 .my_favourites {
     width: 60%;
     margin: 10px 0 0 20px;
+}
+@media screen and (max-width: 768px) {
+    .my_favourites{
+        width: 100%;
+        margin: 0 0 20px 0;  
+    }
 }
 
 .shops-cards{

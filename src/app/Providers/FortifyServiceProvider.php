@@ -49,5 +49,10 @@ class FortifyServiceProvider extends ServiceProvider
 
             return Limit::perMinute(10)->by($email . $request->ip());
         });
+
+        //メール認証のリダイレクト先
+        Fortify::verifyEmailView(function () {
+            return view('auth.thanks');
+        });
     }
 }
