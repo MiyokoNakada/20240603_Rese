@@ -37,6 +37,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::group(['middleware' => ['auth', 'can:admin']], function () {
         Route::get('/admin', [AdminController::class, 'admin']);
         Route::post('/admin/add_manager', [AdminController::class, 'addManager']);
+        Route::post('/admin/send_email', [AdminController::class, 'sendEmail']);
     });
 
     Route::group(['middleware' => ['auth', 'can:shop_manager']], function () {

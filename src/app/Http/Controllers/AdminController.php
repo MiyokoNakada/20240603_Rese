@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Manager;
 use App\Models\User;
 use App\Models\Shop;
+use App\Mail\NotificationMail;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\EmailRequest;
 
 class AdminController extends Controller
 {
@@ -25,5 +28,17 @@ class AdminController extends Controller
 
         
         return redirect('admin')->with('message', '店舗代表者を作成しました');
+    }
+
+    //メール送信機能
+    public function sendEmail(EmailRequest $request)
+    {
+        $details = [
+            'title' => $request->title,
+            'body' => $request->body
+        ];
+        Mail::to($request->email)->send(new NotificationMail($details));
+
+        return redirect('admin')->with('success', 'メールが送信されました');
     }
 }
