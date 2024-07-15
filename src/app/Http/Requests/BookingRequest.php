@@ -22,7 +22,7 @@ class BookingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date' => 'required | date | after:tomorrow ',
+            'date' => 'required | date | after:today ',
             'time' => 'required ',
             'people_number' => 'required | integer | min:1',
         ];
