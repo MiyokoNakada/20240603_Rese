@@ -11,3 +11,10 @@ RUN curl -sS https://getcomposer.org/installer | php \
   && composer self-update
 
 WORKDIR /var/www
+
+RUN apt update && apt install -y cron
+RUN apt update && apt install -y nano
+COPY crontab /etc/cron.d/laravel-scheduler
+RUN chmod 644 /etc/cron.d/laravel-scheduler
+RUN crontab /etc/cron.d/laravel-scheduler
+CMD ["cron", "-f"]
