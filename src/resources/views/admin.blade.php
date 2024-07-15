@@ -15,6 +15,7 @@
 <div class="admin">
     <h2 class="admin-ttl">管理者用画面</h2>
 
+
     <div class="create-manager">
         <h3>店舗代表者作成</h3>
         <form class="create-manager__form" action="/admin/add_manager" method="post">
@@ -32,8 +33,34 @@
         </div>
     </div>
 
+    <div class="email">
+        <h3>メール送信</h3>
+        <form class="email__form" action="/admin/send_email" method="POST">
+            @csrf
+            <div class="email__form-item">
+                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                <span class="error">@error('email'){{ $message }}@enderror</span>
+                <input type="text" name="title" placeholder="Title" value="{{ old('title') }}">
+                <span class="error">@error('title'){{ $message }}@enderror</span>
+            </div>
+            <div class="email__form-item">
+                <textarea name="body" rows="5" cols="50" placeholder="本文"></textarea>
+                <span class="error">@error('body'){{ $message }}@enderror</span>
+            </div>
+            <div class="email__form-item">
+                <button type="submit">送信</button>
+            </div>
+        </form>
+        @if(session('success'))
+        <div class="alert">
+            {{ session('success') }}
+        </div>
+        @endif
+    </div>
+
+
     <div class="manager-table">
-        <h3>店舗代表者一覧</h3>
+        <h3>店舗一覧</h3>
         <table class="manager-table__inner">
             <tr class="manager-table__header_row">
                 <th class="manager-table__header_item">店名</th>
@@ -51,6 +78,8 @@
             @endforeach
         </table>
     </div>
+
+
 
 
 </div>

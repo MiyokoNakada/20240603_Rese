@@ -1,6 +1,7 @@
-.alart{
+.alert, .error{
     color: red;
 }
+
 
 .admin-ttl{
     color: rgb(77, 77, 255);
@@ -8,8 +9,8 @@
     width: fit-content;
 }
 
-.create-manager {
-    margin-bottom: 20px;
+.create-manager, email {
+    margin-bottom:40px;
 }
 
 .create-manager form input{
@@ -18,12 +19,42 @@
     border-radius: 5px; 
 }
 
-.create-manager form> input:not(.create-manager_submit-btn){
+.create-manager form input:not(.create-manager_submit-btn){
     padding-left:10px;
     background-color: white;
 }
 
 .create-manager_submit-btn{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    font-size: 16px;
+    padding:0 20px;
+}
+
+.email form input, button{
+    height: 40px;
+    border: none;
+    border-radius: 5px; 
+    margin-bottom: 5px;
+}
+
+.email__form-item input, textarea{
+    padding-left:10px;
+    background-color: white;
+}
+
+.email__form-item input:nth-child(3){
+    width: 20vw;
+}
+
+.email__form-item textarea{
+    border: none;
+    border-radius: 5px; 
+    padding: 10px;
+    line-height: 15px;
+}
+
+.email__form-item button{
     background-color: rgb(77, 77, 255);
     color: white;
     font-size: 16px;
