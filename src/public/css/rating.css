@@ -1,0 +1,68 @@
+.return{    
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+    transform: translate(0, -5px);
+}
+
+.rating-card {
+    width: 50%;
+    background-color: rgb(100, 100, 255);
+    padding: 10px;
+    border-radius: 5px;   
+    box-shadow: gray 2px 2px 2px;
+}
+
+.rating__table *{
+    background-color: rgb(100, 100, 255);
+    color: white;
+}
+
+.rating__table_row th{
+    width: 25%;
+    height: 80%;
+    font-size: 16px;
+}
+
+.rating__table_row textarea{
+    border: white solid 1px;
+}
+
+.rating__table_btn{
+    width: 80px;
+    background-color: white;
+    color: rgb(100, 100, 255);
+    font-weight: bold;
+    margin-bottom: 5px; 
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 星マーク */
+.rating__table_star{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+.rating__table_star input{
+    display: none;
+}
+.rating__table_star label{
+    font-size: 2rem;
+    color: #D2D2D2;
+    cursor: pointer;
+}
+.rating__table_star label:hover,
+.rating__table_star label:hover ~ label,
+.rating__table_star input:checked ~ label {
+    color: #F8C601;              
+}

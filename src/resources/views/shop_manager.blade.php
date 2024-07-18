@@ -68,10 +68,8 @@
                     <td>{{ $booking->formatted_time }}</td>
                     <td>{{ $booking->people_number }}人</td>
                     <td>
-                        <form action="/shop_manager/booking_detail" method="get">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $booking->id }}">
-                            <button>詳細</button>
+                        <a href="{{ url('/shop_manager/booking_detail?booking_id=' . $booking->id) }}"><button>詳細</button></a>
+
                         </form>
                     </td>
                 </tr>
