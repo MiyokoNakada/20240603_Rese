@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Shop;
 use App\Models\Booking;
 use App\Models\Favourite;
-use App\Models\User;
 use Carbon\Carbon;
 
 class MypageController extends Controller

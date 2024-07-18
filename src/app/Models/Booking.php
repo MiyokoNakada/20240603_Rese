@@ -14,7 +14,8 @@ class Booking extends Model
         'shop_id',
         'date',
         'time',
-        'people_number'
+        'people_number',
+        'visit_at'
     ];
     
     public function user(){
@@ -24,5 +25,9 @@ class Booking extends Model
     public function shop(){
         return $this->belongsTo(Shop::class);
     }
-
+    
+    public function rating()
+    {
+        return $this->hasOne(Rating::class);
+    }
 }

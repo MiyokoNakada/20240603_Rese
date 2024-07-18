@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Manager;
 use App\Models\Booking;
-use App\Models\User;
 use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
@@ -93,5 +92,24 @@ class ShopManagerController extends Controller
         Shop::find($shop_id)->update($form);
 
         return redirect('shop_manager')->with('message', '店舗情報を更新しました');;
+    }
+
+    //予約詳細画面表示
+    public function bookingDetail(Request $request)
+    {
+        $booking = Booking::find($request->id);
+        $booking['formatted_time'] = Carbon::parse($booking->time)->format('H:i');
+
+        return view('booking_detail', compact('booking'));
+    }
+
+    //来店確認
+    public function storeVisit(Request $request){
+        $booking = Booking::find($request->id);
+        $booking->visit_at = now();
+        $booking->save();
+
+        return redirect('shop_manager')->with('message', '来店情報を保存しました');
+
     }
 }
