@@ -97,7 +97,7 @@ class ShopManagerController extends Controller
     //予約詳細画面表示
     public function bookingDetail(Request $request)
     {
-        $booking = Booking::find($request->id);
+        $booking = Booking::find($request->booking_id);
         $booking['formatted_time'] = Carbon::parse($booking->time)->format('H:i');
 
         return view('booking_detail', compact('booking'));
@@ -110,6 +110,5 @@ class ShopManagerController extends Controller
         $booking->save();
 
         return redirect('shop_manager')->with('message', '来店情報を保存しました');
-
     }
 }
