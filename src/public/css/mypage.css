@@ -79,7 +79,8 @@
 }
 
 .my_bookings__table-delete,
-.my_bookings__table-change{
+.my_bookings__table-change,
+.my_bookings__table-rating{
     width: 80px;
     background-color: white;
     color: rgb(100, 100, 255);
@@ -92,6 +93,11 @@
 }
 .my_bookings__table-change{
     margin-top: 10px;
+}
+.my_bookings__table-rating a{
+    background-color: white;
+    color: rgb(100, 100, 255);
+    padding: 0;
 }
 
 .my_bookings__table{

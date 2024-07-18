@@ -10,22 +10,20 @@ use Carbon\Carbon;
 
 class RatingController extends Controller
 {
+    //評価用画面表示
     public function showRating(Request $request)
     {
-        $booking = Booking::find($request->id);
+        $booking = Booking::find($request->booking_id);
 
         return view('rating', compact('booking'));
     }
 
+    //評価機能
     public function rating(Request $request)
     {
-        $rating = new Rating();
-        $rating->user_id = Auth::id();
-        $rating->booking_id = $request->input('booking_id');
-        $rating->rating = $request->input('rating');
-        $rating->comment = $request->input('comment');
-        $rating->save();
+        $form = $request->all();
+        Rating::create($form);
 
-        return redirect()->route('mypage')->with('success', '評価を投稿しました');
+        return redirect('mypage')->with('message', '評価を投稿しました');
     }
 }
