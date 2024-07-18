@@ -59,6 +59,7 @@
                     <th>日付</th>
                     <th>時間</th>
                     <th>人数</th>
+                    <th></th>
                 </tr>
                 @foreach($bookings as $booking)
                 <tr>
@@ -66,6 +67,13 @@
                     <td>{{ $booking->date }}</td>
                     <td>{{ $booking->formatted_time }}</td>
                     <td>{{ $booking->people_number }}人</td>
+                    <td>
+                        <form action="/shop_manager/booking_detail" method="get">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $booking->id }}">
+                            <button>詳細</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </table>

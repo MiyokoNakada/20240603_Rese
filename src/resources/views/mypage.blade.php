@@ -36,6 +36,9 @@
                         <input type="hidden" name="id" value="{{ $booking->id }}">
                         <button class="my_bookings__table-delete">取消し</button>
                     </form>
+                    @if($booking->visit_at)
+                    <button class="my_bookings__table-delete"><a href="{{ url('/rating?booking_id=' . $booking->id) }}">評価</a></button>
+                    @endif
                 </div>
                 <table class="my_bookings__table">
                     <tr>
