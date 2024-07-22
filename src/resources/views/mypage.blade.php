@@ -36,15 +36,9 @@
                         <input type="hidden" name="id" value="{{ $booking->id }}">
                         <button class="my_bookings__table-delete">取消し</button>
                     </form>
-                    @if($booking->visit_at)
-                    <button class="my_bookings__table-rating">
-                        <a href="{{ url('/rating?booking_id=' . $booking->id) }}">評価</a>
-                    </button>
-                    <button class="my_bookings__table-rating">
-                        <a href="{{ url('/payment?booking_id=' . $booking->id) }}">支払い</a>
-                    </button>
-                    @endif
+
                 </div>
+
                 <table class="my_bookings__table">
                     <tr>
                         <th class="my_bookings__table-label">Shop</th>
@@ -63,7 +57,26 @@
                         <td class="my_bookings__table-item">{{ $booking->people_number }}</td>
                     </tr>
                 </table>
-
+                @if($booking->visit_at)
+                @if($booking->rating)
+                <button class="my_bookings__table-rating">
+                    評価済み
+                </button>
+                @else
+                <button class="my_bookings__table-rating">
+                    <a href="{{ url('/rating?booking_id=' . $booking->id) }}">評価</a>
+                </button>
+                @endif
+                @if ($booking->payment && $booking->payment->status == 'completed')
+                <button class="my_bookings__table-rating">
+                    支払い済み
+                </button>
+                @else
+                <button class="my_bookings__table-rating">
+                    <a href="{{ url('/payment?booking_id=' . $booking->id) }}">支払い</a>
+                </button>
+                @endif
+                @endif
             </div>
             @endforeach
         </div>

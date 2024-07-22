@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('booking_id')->constrained('bookings')->onDelete('cascade');
             $table->decimal('amount', 8, 0);
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

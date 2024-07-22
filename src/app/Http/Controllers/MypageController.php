@@ -14,7 +14,7 @@ class MypageController extends Controller
     public function mypage(Request $request)
     {
         $user_id = Auth::user()->id;
-        $bookings = Booking::with('shop')
+        $bookings = Booking::with('shop','rating', 'payment')
             ->where('user_id', $user_id)->get();
         foreach ($bookings as $booking) {
             $booking['formatted_time'] = Carbon::parse($booking->time)->format('H:i');
