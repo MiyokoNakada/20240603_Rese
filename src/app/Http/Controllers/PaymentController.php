@@ -46,6 +46,10 @@ class PaymentController extends Controller
             'description' => 'Test payment',
         ]);
 
+        $payment = Payment::where('booking_id', $request->booking_id)->firstOrFail();
+        $payment->status = 'completed';
+        $payment->save();
+
         return redirect('mypage')->with('message', '支払いが完了しました');
     }
 }

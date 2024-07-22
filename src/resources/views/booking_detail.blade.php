@@ -40,28 +40,48 @@
                     <th class="my_bookings__table-label">Number</th>
                     <td class="my_bookings__table-item">{{ $booking->people_number }}</td>
                 </tr>
+                <tr></tr>
+                <tr>
+                    <th>
+                        <p>ご来店</p>
+                    </th>
+                    <td>
+                        @if($booking->visit_at)
+                        <button class="my_bookings__table-change">確認済み</button>
+                        @else
+                        <form action="/shop_manager/booking_detail" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $booking->id }}">
+                            <button class="my_bookings__table-change">来店確認</button>
+                        </form>
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>お会計</p>
+                    </th>
+                    <td>
+                        @if($booking->visit_at)
+                        @if ($booking->payment && $booking->payment->status == 'completed')
+                        <button class="my_bookings__table-change">支払い済み</button>
+                        @else
+                        <form action="/shop_manager/payment_amount" method="POST">
+                            @csrf
+                            <div>
+                                <input type="hidden" name="booking_id" value="{{ $booking->id }}">
+                                <label for="amount">金額（円）:</label>
+                                <input type="number" name="amount">
+                            </div>
+                            <button class="my_bookings__table-change" type="submit">金額を決定</button>
+                        </form>
+                        @endif
+                        @endif
+                    </td>
+                </tr>
             </table>
-            @if($booking->visit_at)
-            <button class="my_bookings__table-change">確認済み</button>
-            @else
-            <form action="/shop_manager/booking_detail" method="post">
-                @csrf
-                <input type="hidden" name="id" value="{{ $booking->id }}">
-                <button class="my_bookings__table-change">来店確認</button>
-            </form>
-            @endif
-            @if($booking->visit_at)
-            <p>お会計</p>
-            <form action="/shop_manager/payment_amount" method="POST">
-                @csrf
-                <div>
-                    <input type="hidden" name="booking_id" value="{{ $booking->id }}">
-                    <label for="amount">金額（円）:</label>
-                    <input type="number" name="amount">
-                </div>
-                <button type="submit">金額を決定</button>
-            </form>
-            @endif
+
+
         </div>
     </div>
 </div>
