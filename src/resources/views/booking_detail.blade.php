@@ -13,12 +13,16 @@
     <div class="my_bookings ">
         <a href='/shop_manager' class="return"> &lt;</a>
         <h3>来店確認</h3>
+        <div class="alart">
+            {{ session('message') }}
+        </div>
 
         <div class="my_bookings__card">
             <p class="my_bookings__table-ttl">
                 <i class="fa-regular fa-clock fa-lg"></i>
                 予約詳細
             </p>
+
             <table class="my_bookings__table">
                 <tr>
                     <th class="my_bookings__table-label">Name</th>
@@ -38,13 +42,25 @@
                 </tr>
             </table>
             @if($booking->visit_at)
-                <button class="my_bookings__table-change">確認済み</button>
+            <button class="my_bookings__table-change">確認済み</button>
             @else
-                <form action="/shop_manager/booking_detail" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $booking->id }}">
-                    <button class="my_bookings__table-change">来店確認</button>
-                </form>
+            <form action="/shop_manager/booking_detail" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{ $booking->id }}">
+                <button class="my_bookings__table-change">来店確認</button>
+            </form>
+            @endif
+            @if($booking->visit_at)
+            <p>お会計</p>
+            <form action="/shop_manager/payment_amount" method="POST">
+                @csrf
+                <div>
+                    <input type="hidden" name="booking_id" value="{{ $booking->id }}">
+                    <label for="amount">金額（円）:</label>
+                    <input type="number" name="amount">
+                </div>
+                <button type="submit">金額を決定</button>
+            </form>
             @endif
         </div>
     </div>
