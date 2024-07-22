@@ -8,6 +8,8 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ShopManagerController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\PaymentController;
+
 
 
 /*
@@ -38,6 +40,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/rating', [RatingController::class, 'showRating']);
     Route::post('/rating', [RatingController::class, 'rating']);
 
+    Route::get('/payment', [PaymentController::class, 'paymentPage']);
+    Route::post('/payment', [PaymentController::class, 'payment']);
+
     Route::group(['middleware' => ['auth', 'can:admin']], function () {
         Route::get('/admin', [AdminController::class, 'admin']);
         Route::post('/admin/add_manager', [AdminController::class, 'addManager']);
@@ -51,6 +56,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/shop_manager/update_detail', [ShopManagerController::class, 'updateShopDetail']);
         Route::get('/shop_manager/booking_detail', [ShopManagerController::class, 'bookingDetail']);
         Route::post('/shop_manager/booking_detail', [ShopManagerController::class, 'storeVisit']);
+        Route::post('/shop_manager/payment_amount', [PaymentController::class, 'setAmount']);
     });
 
     Route::post('logout', [AuthController::class, 'logout']);
