@@ -52,7 +52,7 @@ class FortifyServiceProvider extends ServiceProvider
 
         //メール認証のリダイレクト先
         Fortify::verifyEmailView(function () {
-            return view('auth.thanks');
+            return view('auth.login');
         });
     }
 }

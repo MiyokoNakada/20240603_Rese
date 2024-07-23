@@ -27,11 +27,14 @@
                             <input id="star04" type="radio" name="rating" value="2"><label for="star04">★</label>
                             <input id="star05" type="radio" name="rating" value="1"><label for="star05">★</label>
                         </div>
+                        <span class="error">@error('rating'){{ $message }}@enderror</span>
                     </td>
                 </tr>
                 <tr class="rating__table_row">
                     <th>コメント</th>
-                    <td><textarea name="comment" rows="5" cols="50">{{ old('comment') }}</textarea></td>
+                    <td><textarea name="comment" rows="5" cols="50">{{ old('comment') }}</textarea><br>
+                        <span class="error">@error('comment'){{ $message }}@enderror</span>
+                    </td>
                 </tr>
                 <tr class="rating__table_row">
                     <th></th>

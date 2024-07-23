@@ -22,7 +22,7 @@ class ShopManagerController extends Controller
         $genres = Genre::all();
 
         if ($user->role == '1') {
-            return redirect('admin')->with('access-alart', '管理者は店舗情報にアクセスできません。');
+            return redirect('admin')->with('access-alert', '管理者は店舗情報にアクセスできません。');
         }
 
         $shop_info = Manager::with('user', 'shop', 'shop.area', 'shop.genre')
@@ -31,7 +31,10 @@ class ShopManagerController extends Controller
         $bookings = [];
         if ($shop_info) {
             $bookings = Booking::with('user')
-                ->where('shop_id', $shop_info->shop_id)->get();
+                ->where('shop_id', $shop_info->shop_id)
+                ->orderBy('date', 'asc')
+                ->orderBy('time', 'asc')
+                ->get();
             foreach ($bookings as $booking) {
                 $booking['formatted_time'] = Carbon::parse($booking->time)->format('H:i');
             }

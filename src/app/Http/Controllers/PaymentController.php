@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PaymentRequest;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Charge;
-use App\Models\Booking;
 use App\Models\Payment;
 
 class PaymentController extends Controller
 {
     //支払金額設定
-    public function setAmount(Request $request)
+    public function setAmount(PaymentRequest $request)
     {
         $payment = $request->all();
         Payment::create($payment);
@@ -33,10 +33,7 @@ class PaymentController extends Controller
     //支払い機能(Stripe)
     public function payment(Request $request)
     {
-        $payment = Payment::where('booking_id', $request->booking_id)->firstOrFail();
-        if (!$payment || !$payment->amount) {
-            return redirect('mypage')->with('message', '支払金額が設定されていません。');
-        }
+        $payment = Payment::where('booking_id', $request->booking_id)->first();
 
         Stripe::setApiKey(env('STRIPE_SECRET'));
         Charge::create([

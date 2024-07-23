@@ -9,6 +9,7 @@ use App\Models\Shop;
 use App\Mail\NotificationMail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\EmailRequest;
+use App\Http\Requests\RegisterRequest;
 
 class AdminController extends Controller
 {
@@ -21,11 +22,10 @@ class AdminController extends Controller
     }
 
     //店舗代表者登録機能
-    public function addManager(Request $request)
+    public function addManager(RegisterRequest $request)
     {
         $form = $request->all();
         User::create($form);
-
         
         return redirect('admin')->with('message', '店舗代表者を作成しました');
     }
@@ -37,7 +37,7 @@ class AdminController extends Controller
             'title' => $request->title,
             'body' => $request->body
         ];
-        Mail::to($request->email)->send(new NotificationMail($details));
+        Mail::to($request->email_address)->send(new NotificationMail($details));
 
         return redirect('admin')->with('success', 'メールが送信されました');
     }
