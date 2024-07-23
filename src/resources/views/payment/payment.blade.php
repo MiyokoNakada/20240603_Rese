@@ -1,8 +1,13 @@
 @extends('layout.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+@endsection
+
 @section('content')
 
 <div class="payment">
+    <a href='/mypage' class="return"> &lt;</a>
     <p>支払い金額：{{ $payment->amount }} 円</p>
     <form action="/payment" method="POST">
         @csrf

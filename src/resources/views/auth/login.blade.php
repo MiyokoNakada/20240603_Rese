@@ -19,7 +19,7 @@
                         <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
                         <div class="form__error">
                             @error('email')
-                            {{ $message }}  
+                            {{ $message }}
                             @enderror
                         </div>
                     </div>
@@ -34,6 +34,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="auth-form__submit">
                     <input class="auth-form__btn" type="submit" value="ログイン">
                 </div>

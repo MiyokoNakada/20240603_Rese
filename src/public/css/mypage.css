@@ -1,3 +1,7 @@
+.alert{
+    color: red;
+}
+
 .user {
     text-align: center;
 }
@@ -22,40 +26,9 @@
     }
 }
 
-.my_bookings-change{
-    width: 50%;
-    margin: 10px 20px 0 0;
-}
-@media screen and (max-width: 768px) {
-    .my_bookings-change{
-        width: 100%;
-        margin: 0 0 20px 0;     
-    }
-}
-
 .my_bookings a, h3{
     display: inline-block;
     padding: 0 20px;
-}
-
-.booking_change__alart{
-    color: red;
-}
-
-.return{    
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    color: black;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: gray 2px 2px 2px;
-    cursor: pointer;
-    transform: translate(0, -5px);
-    position: relative;
-    z-index: 10;
 }
 
 .my_bookings__card {
@@ -80,21 +53,21 @@
 
 .my_bookings__table-delete,
 .my_bookings__table-change,
-.my_bookings__table-rating{
+.my_bookings__table-rating,
+.my_bookings__table-payment{
     width: 80px;
     background-color: white;
     color: rgb(100, 100, 255);
     font-weight: bold;
-    margin-bottom: 5px; 
+    margin: 5px 0;
     padding: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-.my_bookings__table-change{
-    margin-top: 10px;
-}
-.my_bookings__table-rating a{
+
+.my_bookings__table-rating a,
+.my_bookings__table-payment a{
     background-color: white;
     color: rgb(100, 100, 255);
     padding: 0;
@@ -107,6 +80,7 @@
 }
 
 .my_bookings__table-label{
+    width: 25%;
     padding-right: 40px;
 }
 
@@ -137,4 +111,33 @@ select{
 /* エラーメッセージ */
 .error{
     color: rgb(255, 180, 180);
+}
+
+
+/* 予約変更画面 */
+.my_bookings-change{
+    width: 50%;
+    margin: 10px 20px 0 0;
+}
+@media screen and (max-width: 768px) {
+    .my_bookings-change{
+        width: 100%;
+        margin: 0 0 20px 0;     
+    }
+}
+
+.return{    
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+    transform: translate(0, -5px);
+    position: relative;
+    z-index: 10;
 }

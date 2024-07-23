@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\AuthController;
@@ -65,6 +66,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/thanks', [AuthController::class, 'thanks']);
-
 
 

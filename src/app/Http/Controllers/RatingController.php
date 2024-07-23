@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RatingRequest;
 use App\Models\Rating;
 use App\Models\Booking;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
+
 
 class RatingController extends Controller
 {
@@ -19,7 +19,7 @@ class RatingController extends Controller
     }
 
     //評価機能
-    public function rating(Request $request)
+    public function rating(RatingRequest $request)
     {
         $form = $request->all();
         Rating::create($form);

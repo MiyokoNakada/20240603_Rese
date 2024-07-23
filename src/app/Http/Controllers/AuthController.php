@@ -19,7 +19,6 @@ use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
 use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Features;
-
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 

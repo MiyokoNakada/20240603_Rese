@@ -42,8 +42,9 @@ class ShopRequest extends FormRequest
             'genre_id.integer' => 'ジャンルを選択してください',
             'description.string' => '文字列で入力してください',
             'image.image' => '指定されたファイルが画像ではありません',
-            'image.mines' => '指定された拡張子(jpg/jpeg/png/gif)ではありません',
+            'image.mimes' => '指定された拡張子(jpg/jpeg/png/gif)ではありません',
             'image.max' => 'ファイルサイズは2MB以内にしてください',
         ];
     }
+    
 }

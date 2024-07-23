@@ -23,7 +23,7 @@ class EmailRequest extends FormRequest
     {
         return [
             'title' => 'required | string | max:191',
-            'email' => 'required | string | email | max:191',
+            'email_address' => 'required | string | email | max:191',
             'body' => 'required | string',
         ];
     }
@@ -35,10 +35,10 @@ class EmailRequest extends FormRequest
             'title.required' => 'タイトルを入力してください',
             'title.string' => '文字列で入力してください',
             'title.max' => '191字以下で入力してください',
-            'email.required' => 'メールアドレスを入力してください',
-            'email.string' => '文字列で入力してください',
-            'email.email' => '「ユーザー名@ドメイン」形式で入力してください',
-            'email.max' => '191字以下で入力してください',
+            'email_address.required' => 'メールアドレスを入力してください',
+            'email_address.string' => '文字列で入力してください',
+            'email_address.email' => '「ユーザー名@ドメイン」形式で入力してください',
+            'email_address.max' => '191字以下で入力してください',
             'body.required' => '本文を入力してください',
             'body.string' => '文字列で入力してください',
         ];

@@ -15,7 +15,7 @@
     <div class="my_table">
         <div class="my_bookings">
             <h3>予約状況</h3>
-            <div class="booking_change__alart">
+            <div class="alert">
                 {{ session('message') }}
             </div>
 
@@ -26,6 +26,7 @@
                     予約{{ $index + 1 }}
                 </p>
                 <div class="my_bookings__btn">
+                    @if(!$booking->visit_at)
                     <form action="/booking_change" method="get">
                         @csrf
                         <input type="hidden" name="id" value="{{ $booking->id }}">
@@ -36,7 +37,7 @@
                         <input type="hidden" name="id" value="{{ $booking->id }}">
                         <button class="my_bookings__table-delete">取消し</button>
                     </form>
-
+                    @endif
                 </div>
 
                 <table class="my_bookings__table">
@@ -57,6 +58,7 @@
                         <td class="my_bookings__table-item">{{ $booking->people_number }}</td>
                     </tr>
                 </table>
+
                 @if($booking->visit_at)
                 @if($booking->rating)
                 <button class="my_bookings__table-rating">
@@ -68,11 +70,11 @@
                 </button>
                 @endif
                 @if ($booking->payment && $booking->payment->status == 'completed')
-                <button class="my_bookings__table-rating">
+                <button class="my_bookings__table-payment">
                     支払い済み
                 </button>
                 @else
-                <button class="my_bookings__table-rating">
+                <button class="my_bookings__table-payment">
                     <a href="{{ url('/payment?booking_id=' . $booking->id) }}">支払い</a>
                 </button>
                 @endif
