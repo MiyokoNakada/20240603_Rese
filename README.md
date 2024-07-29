@@ -4,15 +4,32 @@
 自社にて予約サービスを運営するため作成しました  
 <br>
 ＜トップページ＞  <br>
-<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/67386f11-aea5-4975-89ca-3f0c71687fb6" width=70%><br>
+　店舗の一覧が表示され、お気に入りの登録・削除、店舗の検索が行えます。<br>
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/67386f11-aea5-4975-89ca-3f0c71687fb6" width=60%><br>
 ＜店舗詳細ページ＞<br>
-<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/bb0e9f5b-3828-49af-bc49-25bf9cd71455" width=70%><br>
+　店舗の詳細説明を見ることができます。この画面から日時、人数を指定して予約できます。<br>
+<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/bb0e9f5b-3828-49af-bc49-25bf9cd71455" width=60%><br>
 ＜マイページ＞ <br>
-<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/7cd64d7f-f8a3-446b-9b7d-7baebe525ed3" width=70%><br>
+　ユーザー個別の予約状況とお気に入りに登録した店舗の一覧が表示されます。予約の変更や取消しが行えます。<br>
+　また、店舗側が来店確認をした後に評価・支払いボタンが表示され、評価の登録と支払いができるようになります。<br>
+<img src="https://github.com/user-attachments/assets/d3e144f8-43e6-4ce9-8f17-62cec8928819" width=60%><br>
+＜評価登録用ページ＞ <br>
+　店舗側が来店確認をした後に評価ができるようになります。来店時の評価を★1～5、コメントで評価できます。<br>
+<img src="https://github.com/user-attachments/assets/fb57f9b7-e1c8-4642-b816-83279587d6be" width=30%><br>
+＜管理者用ページ＞ <br>
+　管理者専用の画面です。店舗代表者のアカウントを作成することができます。メールアドレスを指定してメール送信ができます。<br>
+<img src="https://github.com/user-attachments/assets/516386b5-3046-4ac9-b45e-2fdfbe12f51d" width=60%><br>
+＜店舗代表者用ページ＞ <br>
+　店舗代表者専用の画面です。管理者が店舗代表者のアカウントを作成後、店舗情報を作成・編集できます。<br>
+　予約一覧が表示されており、詳細ボタンから予約詳細を確認できます。<br>
+<img src="https://github.com/user-attachments/assets/d7c3511f-f844-4186-aa56-118b8731a557" width=60%><br>
+＜予約詳細ページ＞<br>
+　各予約の詳細を確認できます。来店確認ボタンをクリックすると、決済のための支払い額が設定できるようになります。<br>
+<img src="https://github.com/user-attachments/assets/a31d4a8f-bc53-47fe-ac65-d40b009c7d24" width=30%><br>
 <br>
 ## URL
 
-- 本番環境：http://  
+- 本番環境：http://
   （上記 URL でログイン後にトップページに遷移します)
 - 開発環境：http://localhost/
 - phpMyAdmin：http://localhost:8080/
@@ -25,15 +42,17 @@ https://github.com/MiyokoNakada/20240603_Rese
 
 ## 機能一覧
 
-- 会員登録機能
-- ログイン・ログアウト機能
-- 飲食店一覧表示
-- 飲食店詳細表示
-- マイページ表示
-- 検索機能
+- 会員登録・ログイン・ログアウト機能
+- 飲食店一覧（検索機能）
 - お気に入り登録・削除
-- 予約機能
-  <br>
+- 飲食店詳細（予約機能）
+- マイページ（ユーザー個別の予約状況、お気に入り登録店舗)
+- 予約変更・削除
+- 店舗評価機能（来店後にマイページから評価可能）
+- 決済機能（来店後にマイページから支払い可能）
+- 管理者用画面（店舗代表者作成機能、メール送信機能）
+- 店舗代表者用画面（店舗情報作成・更新機能、来店確認機能、支払額登録機能)
+<br>
 
 ## 使用技術(実行環境)
 
@@ -43,13 +62,12 @@ https://github.com/MiyokoNakada/20240603_Rese
   <br>
 
 ## テーブル設計
-
-<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/66004375-1ea0-4426-8a4f-c036ff869ce2" width=50%> 
-<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/9cf360e5-a511-48cd-9971-bbb0f422e37f" width=50%>
+<img src="https://github.com/user-attachments/assets/398c1236-e79a-4262-9d61-89b15f12a6d1" width=50%> 
+<img src="https://github.com/user-attachments/assets/b7da0603-1774-4956-946a-53d477ea93e2" width=50%>
 <br>
 
 ## ER 図
-<img src="https://github.com/MiyokoNakada/20240603_Rese/assets/159742835/0aedaad9-0f22-4f58-ab27-042434abfd70" width=70%>
+<img src="https://github.com/user-attachments/assets/0db01f43-fe23-40f6-829e-0cd5189d4159" width=70%>
 <br>
 
 ## 環境構築
@@ -79,7 +97,7 @@ https://github.com/MiyokoNakada/20240603_Rese
    ```
 
    ```env
-   APP_ENV=development
+   APP_ENV=local
    APP_DEBUG=true
    APP_URL=http://localhost
 
@@ -93,12 +111,15 @@ https://github.com/MiyokoNakada/20240603_Rese
    MAIL_PORT=2525
    MAIL_USERNAME=your_username
    MAIL_PASSWORD=your_password
-   MAIL_ENCRYPTION=null
-   MAIL_FROM_ADDRESS="email_verification@atte.com"
-   MAIL_FROM_NAME="Atte"
+   MAIL_ENCRYPTION=
+   MAIL_FROM_ADDRESS="rese@email.com"
+   MAIL_FROM_NAME="${APP_NAME}"
+
+   STRIPE_KEY=pk_test_51xxxx(your_stripe_key)
+   STRIPE_SECRET=sk_test_51xxxx(your_stripe_secret_key)
    ```
 
-   ※メールに関する設定項目はそれぞれの環境に合わせて変更してください
+   ※メールおよびStripeに関する設定項目はそれぞれの環境に合わせて変更してください
 
 4. PHP コンテナにログイン後、composer のインストール
    ```sh
@@ -114,6 +135,14 @@ https://github.com/MiyokoNakada/20240603_Rese
 6. マイグレーションの実行
    ```php
    php artisan migrate
+   ```
+7. シンボリックリンクの作成
+   ```php
+   php artisan storage:link
+   ```
+8. Seederデータの挿入
+   ```php
+   php artisan db:seed
    ```
 
 ### (2)本番環境のセットアップ
