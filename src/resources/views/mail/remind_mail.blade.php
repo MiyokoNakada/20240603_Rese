@@ -11,7 +11,7 @@
 </p>
 <p>
     ご予約内容確認のため、来店時に以下のQRコードをご提示ください。<br>
-    {!! QrCode::size(100)->generate('http://localhost/shop_manager/booking_detail?booking_id=' . $booking->id); !!}
+    {!! QrCode::size(100)->generate(config('app.url') . '/shop_manager/booking_detail?booking_id=' . $booking->id); !!}
 </p>
 <p>
     ※このメールアドレスは配信用です※ <br>

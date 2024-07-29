@@ -31,7 +31,11 @@
 <div class="shops">
     @foreach($shops as $shop)
     <div class="shops-cards">
+        @if(app()->environment('local'))
         <img class="shops-cards__img" src="{{ asset('storage/image/' . $shop->image) }}" alt="">
+        @else
+        <img class="shops-cards__img" src="{{ Storage::disk('s3')->url('images/' . $shop->image) }}" alt="">
+        @endif
         <div class="shops-cards__contents">
             <h2>{{ $shop->name }}</h2>
             <p>#{{ $shop->area->name }} #{{ $shop->genre->name }}</p>

@@ -88,7 +88,11 @@
             <div class="shops">
                 @foreach($favourites as $favourite)
                 <div class="shops-cards">
+                    @if(app()->environment('local'))
                     <img class="shops-cards__img" src="{{ asset('storage/image/' . $favourite->shop->image) }}" alt="">
+                    @else
+                    <img class="shops-cards__img" src="{{ Storage::disk('s3')->url('images/' . $favourite->shop->image) }}" alt="">
+                    @endif
                     <div class="shops-cards__contents">
                         <h2>{{ $favourite->shop->name }}</h2>
                         <p>#{{ $favourite->shop->area->name }} #{{ $favourite->shop->genre->name }}</p>

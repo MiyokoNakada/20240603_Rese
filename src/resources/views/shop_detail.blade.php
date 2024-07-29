@@ -13,7 +13,11 @@
     <div class="shop-detail">
         <a href='/' class="return"> &lt;</a>
         <h2 class="shop-name">{{ $detail->name }}</h2>
+        @if(app()->environment('local'))
         <img class="shop-img" src="{{ asset('storage/image/' . $detail->image) }}" alt="">
+        @else
+        <img class="shop-img" src="{{ Storage::disk('s3')->url('images/' . $detail->image) }}" alt="">
+        @endif
         <p>#{{ $detail->area->name }} #{{ $detail->genre->name }}</p>
         <p>{{ $detail->description }}</p>
     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Manager;
 use App\Models\Booking;
 use App\Models\Shop;
@@ -47,14 +48,20 @@ class ShopManagerController extends Controller
         $user = Auth::user();
         $form = $request->all();
         $shop = Shop::create($form);
+        // 画像のアップロード処理(環境に応じて切り分け)
         if ($request->hasFile('image')) {
             $imageFile = $request->file('image');
             $imageName = $imageFile->getClientOriginalName();
-            $imageFile->storeAs('public/image', $imageName);
-            $form['image'] = $imageName;
+            if (app()->environment('local')) { //開発環境
+                $path = $imageFile->storeAs('public/images', $imageName);
+                $form['image'] = $imageName;
+            } else {  //本番環境
+                $path = Storage::disk('s3')->put('images/' . $imageName, file_get_contents($imageFile));
+                Storage::disk('s3')->setVisibility('images/' . $imageName, 'public');
+                $form['image'] = $imageName;
+            }
             Shop::find($shop->id)->update($form);
-        }
-      
+        }      
         $new_manager = new Manager;
         $new_manager->user_id = $user->id;
         $new_manager->shop_id = $shop->id;
@@ -84,12 +91,18 @@ class ShopManagerController extends Controller
         $shop_info = Manager::where('user_id', $user_id)->first();
         $shop_id = $shop_info->shop->id;
 
-        // 画像のアップロード処理
+        // 画像のアップロード処理(環境に応じて切り分け)
         if ($request->hasFile('image')) {
             $imageFile = $request->file('image');
             $imageName = $imageFile->getClientOriginalName();
-            $imageFile->storeAs('public/image', $imageName);
-            $form['image'] = $imageName;
+            if (app()->environment('local')) { //開発環境
+                $imageFile->storeAs('public/images', $imageName);
+                $form['image'] = $imageName;
+            } else {  //本番環境
+                Storage::disk('s3')->put('images/' . $imageName, file_get_contents($imageFile));
+                Storage::disk('s3')->setVisibility('images/' . $imageName, 'public');
+                $form['image'] = $imageName;
+            }
         }
 
         Shop::find($shop_id)->update($form);
