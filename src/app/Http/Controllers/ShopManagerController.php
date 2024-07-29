@@ -53,7 +53,7 @@ class ShopManagerController extends Controller
             $imageFile = $request->file('image');
             $imageName = $imageFile->getClientOriginalName();
             if (app()->environment('local')) { //開発環境
-                $path = $imageFile->storeAs('public/images', $imageName);
+                $path = $imageFile->storeAs('public/image', $imageName);
                 $form['image'] = $imageName;
             } else {  //本番環境
                 $path = Storage::disk('s3')->put('images/' . $imageName, file_get_contents($imageFile));
@@ -96,7 +96,7 @@ class ShopManagerController extends Controller
             $imageFile = $request->file('image');
             $imageName = $imageFile->getClientOriginalName();
             if (app()->environment('local')) { //開発環境
-                $imageFile->storeAs('public/images', $imageName);
+                $imageFile->storeAs('public/image', $imageName);
                 $form['image'] = $imageName;
             } else {  //本番環境
                 Storage::disk('s3')->put('images/' . $imageName, file_get_contents($imageFile));
