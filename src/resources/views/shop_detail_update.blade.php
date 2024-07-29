@@ -57,7 +57,11 @@
                 <th>店舗写真</th>
                 <td>
                     @if($shop_info->shop->image)
+                    @if(app()->environment('local'))
                     <img src="{{ asset('storage/image/' . $shop_info->shop->image) }}" width="40%">
+                    @else
+                    <img src="{{ Storage::disk('s3')->url('images/' . $shop_info->shop->image) }}" width="40%">
+                    @endif
                     @endif
                     <input type="file" name="image">
                     <span class="error">@error('image'){{ $message }}@enderror</span>

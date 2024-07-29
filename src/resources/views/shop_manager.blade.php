@@ -43,7 +43,11 @@
                         <tr>
                             <th>店舗写真</th>
                             <td>
+                                @if(app()->environment('local'))
                                 <img class="shop-img" src="{{  asset('storage/image/' . $shop_info->shop->image)  }}" alt="" width="60%">
+                                @else
+                                <img class="shop-img" src="{{ Storage::disk('s3')->url('images/' . $shop_info->shop->image) }}" alt="" width="60%">
+                                @endif
                             </td>
                         </tr>
                     </table>
