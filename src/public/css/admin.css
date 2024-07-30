@@ -10,57 +10,65 @@
     width: fit-content;
 }
 
-.create-manager, email {
+
+.create-manager, 
+.email {
     margin-bottom:40px;
 }
-
-.create-manager form input{
-    height: 40px;
-    border: none;
-    border-radius: 5px; 
+@media screen and (max-width: 768px) {
+    .create-manager__form,
+    .email__form{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.create-manager form input:not(.create-manager_submit-btn){
-    padding-left:10px;
-    background-color: white;
-}
-
-.create-manager_submit-btn{
-    background-color: rgb(77, 77, 255);
-    color: white;
-    font-size: 16px;
-    padding:0 20px;
-}
-
-.email form input, button{
+.create-manager__form >input, 
+.create-manager__form >button,
+.email__form-item >input, 
+.email__form-item >button{
     height: 40px;
     border: none;
     border-radius: 5px; 
     margin-bottom: 5px;
 }
 
-.email__form-item input, textarea{
+.create-manager__form input:not(.create-manager_submit-btn),
+.email__form-item >input,
+.email__form-item >textarea{
     padding-left:10px;
     background-color: white;
 }
 
-.email__form-item input:nth-child(3){
+.create-manager__form >button,
+.email__form-item >button{
+    background-color: rgb(77, 77, 255);
+    color: white;
+    font-size: 16px;
+    padding:0 20px;
+}
+
+.email__form-item:nth-child(3) >input{
     width: 20vw;
 }
 
-.email__form-item textarea{
+.email__form-item >textarea{
+    width: 30vw;
     border: none;
     border-radius: 5px; 
     padding: 10px;
     line-height: 15px;
 }
 
-.email__form-item button{
-    background-color: rgb(77, 77, 255);
-    color: white;
-    font-size: 16px;
-    padding:0 20px;
+@media screen and (max-width: 768px) {
+    .create-manager__form >*, 
+    .email__form-item >*,
+    .email__form-item:nth-child(3) >input,
+    .email__form-item >textarea{
+        width: 100% ;
+    }
 }
+
 
 .manager-table{    
     margin-bottom: 40px;
@@ -68,6 +76,11 @@
 
 .manager-table__inner{
     width: 50%;
+}
+@media screen and (max-width: 768px) {
+    .manager-table__inner{
+        width: 100% ;
+    }
 }
 
 .manager-table__header_item{

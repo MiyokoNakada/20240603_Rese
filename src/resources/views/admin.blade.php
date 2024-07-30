@@ -30,7 +30,7 @@
             <span class="error">@error('password'){{ $message }}@enderror</span>
             <input type="hidden" name="role" value="2">
             <input type="hidden" name="email_verified_at" value="{{ now() }}">
-            <input class="create-manager_submit-btn" type="submit" value="登録">
+            <button type="submit">登録</button>
         </form>
     </div>
 
