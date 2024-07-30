@@ -5,7 +5,14 @@ target.addEventListener("click", () => {
     target.classList.toggle("open");
     const nav = document.getElementById("nav");
     nav.classList.toggle("in");
+
+    if (nav.classList.contains("in")) {
+        target.classList.add("fixed");
+    } else {
+        target.classList.remove("fixed");
+    }
 });
+
 
 //search function
 document.addEventListener('DOMContentLoaded', function() {

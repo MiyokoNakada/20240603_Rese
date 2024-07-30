@@ -23,8 +23,12 @@
             <option value="{{ $genre->id }}" {{ request('genre_id') == $genre->id ? 'selected' : '' }}>{{ $genre->name }}</option>
             @endforeach
         </select>
-        <button class="search__submit" type=" submit"><i class="search__submit_icon fa-solid fa-magnifying-glass fa-lg"></i></button>
-        <input class="search__option" type="text" name="keyword" placeholder="Search..." value="{{ request('keyword') }}">
+        <div class="search__submit-wrapper">
+            <button class="search__submit" type=" submit">
+                <i class="search__submit_icon fa-solid fa-magnifying-glass fa-lg"></i>
+            </button>
+            <input class="search__option" type="text" name="keyword" placeholder="Search..." value="{{ request('keyword') }}">
+        </div>
     </form>
 </div>
 
