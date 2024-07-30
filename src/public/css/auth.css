@@ -1,14 +1,15 @@
-/* *{
-    border: salmon solid 1px;
-}
- */
-
 .auth-inner{
     width: 450px;
     margin: 50px auto;
     background-color: white;
     border-radius: 5px;
     box-shadow: gray 2px 2px 2px;
+}
+@media screen and (max-width: 768px) {
+  .auth-inner {
+    width:80vw;    
+    margin: 10px auto;
+  }
 }
 
 .auth-inner p{

@@ -39,6 +39,11 @@
     box-shadow: gray 2px 2px 2px;
     position: relative;
 }
+@media screen and (max-width: 768px) {
+    .my_bookings__card{
+        padding: 20px 20px 20px 30px ;   
+    }
+}
 
 .my_bookings__card *{
     background-color: rgb(100, 100, 255);
@@ -49,6 +54,12 @@
     position: absolute;
     top: 30px;
     right: 30px;
+}
+@media screen and (max-width: 480px) {
+    .my_bookings__btn{
+    top: 10px;
+    right: 10px;
+}
 }
 
 .my_bookings__table-delete,
@@ -74,14 +85,15 @@
 }
 
 .my_bookings__table{
+    width: 100%;
     margin-top: 20px;
     text-align: left;
     line-height: 30px;
 }
 
 .my_bookings__table-label{
-    width: 25%;
-    padding-right: 40px;
+    width: 30%;
+    padding-right: 5px;
 }
 
 .my_bookings__table-item input, 
@@ -100,11 +112,6 @@ select{
         width: 100%;
         margin: 0 0 20px 0;  
     }
-}
-
-.shops-cards{
-    margin-right: 20px;
-    margin-bottom: 20px;
 }
 
 

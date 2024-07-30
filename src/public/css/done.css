@@ -1,11 +1,18 @@
 .done-inner{
-    width: 450px;
+    width: 550px;
     height: 300px;
     margin: 50px auto;
     background-color: white;
     text-align: center;
     border-radius: 5px;
     box-shadow: gray 2px 2px 2px;
+}
+@media screen and (max-width: 768px) {
+  .done-inner {
+    width:80vw;
+    height: auto;
+    margin: 10px auto;
+  }
 }
 
 .done-inner p{
@@ -15,11 +22,22 @@
     padding: 100px 0 20px;
     border-radius: 5px;
 }
+@media screen and (max-width: 768px) {
+  .done-inner p {
+    font-size: 18px;
+    padding: 100px 0 10px;
+  }
+}
 
 .email-verify{
-    font-size: 12px;
+    font-size: 14px;
     background-color: white;
     padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .email-verify {
+    font-size: 11px;
+  }
 }
 
 .done-inner a{
@@ -32,4 +50,5 @@
     border-radius: 5px;
     padding: 8px 15px ;
     text-decoration: none;
+    margin-bottom: 20px;
 }

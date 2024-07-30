@@ -19,6 +19,11 @@
     border-radius: 5px;   
     box-shadow: gray 2px 2px 2px;
 }
+@media screen and (max-width: 768px) {
+    .rating-card{
+        width: 100%;
+    }
+}
 
 .rating__table *{
     background-color: rgb(100, 100, 255);
@@ -32,6 +37,7 @@
 }
 
 .rating__table_row textarea{
+    width: 100%;
     border: white solid 1px;
 }
 
