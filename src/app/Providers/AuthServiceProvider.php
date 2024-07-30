@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         
         Gate::define('shop_manager', function ($user) {
-            return ($user->role <= 2); // 店舗代表者
+            return ($user->role == 2); // 店舗代表者
         });
         
         Gate::define('user', function ($user) {
