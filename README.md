@@ -18,7 +18,7 @@
 <img src="https://github.com/user-attachments/assets/fb57f9b7-e1c8-4642-b816-83279587d6be" width=30%><br><br>
 ＜管理者用ページ＞ <br>
 　管理者専用の画面です。店舗代表者のアカウントを作成することができます。メールアドレスを指定してメール送信ができます。<br>
-<img src="https://github.com/user-attachments/assets/516386b5-3046-4ac9-b45e-2fdfbe12f51d" width=60%><br><br>
+<img src="https://github.com/user-attachments/assets/23bbbed5-1d76-4040-b862-ba2318b0af65" width=60%><br><br>
 ＜店舗代表者用ページ＞ <br>
 　店舗代表者専用の画面です。管理者が店舗代表者のアカウントを作成後、店舗情報を作成・編集できます。<br>
 　予約一覧が表示されており、詳細ボタンから予約詳細を確認できます。<br>
@@ -30,8 +30,8 @@
 
 ## URL
 
-- 本番環境：http://
-  （上記 URL でログイン後にトップページに遷移します)
+- 本番環境：http://http://54.252.248.143/
+  （URL でログイン後にトップページに遷移します)
 - 開発環境：http://localhost/
 - phpMyAdmin：http://localhost:8080/
   <br><br>
@@ -49,6 +49,7 @@ https://github.com/MiyokoNakada/20240603_Rese
 - 飲食店詳細（予約機能）
 - マイページ（ユーザー個別の予約状況、お気に入り登録店舗)
 - 予約変更・削除
+- リマインドメール機能（予約当日の朝９時に店舗からQRコード付きリマインドメール）
 - 店舗評価機能（来店後にマイページから評価可能）
 - 決済機能（来店後にマイページから支払い可能）
 - 管理者用画面（店舗代表者作成機能、メール送信機能）
@@ -236,22 +237,24 @@ https://github.com/MiyokoNakada/20240603_Rese
    ```
    ```php
    composer install
-   ```
-9. アプリケーションキーの作成
+   ```   
+9. S3ファイルシステムのインストール
    ```php
-   php artisan key:generate
+   composer require league/flysystem-aws-s3-v3 "^3.0" --with-all-dependencies
    ```
-10. マイグレーションの実行  
+10. アプリケーションキーの作成
+    ```php
+    php artisan key:generate
+    ```
+11. マイグレーションの実行  
     ```php
     php artisan migrate
     ```
-11. シンボリックリンクの作成
-   
+12. シンボリックリンクの作成
     ```php
     php artisan storage:link
     ```
-12. Seederデータの挿入
- 
+13. Seederデータの挿入
     ```php
     php artisan db:seed
     ```
