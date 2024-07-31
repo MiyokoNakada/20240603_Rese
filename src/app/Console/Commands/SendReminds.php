@@ -31,12 +31,8 @@ class SendReminds extends Command
      */
     public function handle()
     {
-        //明日の予約をリマインド(確認用、後で削除)
-        $tomorrow = Carbon::tomorrow()->toDateString();
-        $bookings = Booking::whereDate('date', $tomorrow)->get();
-
-        // $today = Carbon::today()->toDateString();
-        // $bookings = Booking::whereDate('date', $today)->get();
+        $today = Carbon::today()->toDateString();
+        $bookings = Booking::whereDate('date', $today)->get();
 
         foreach ($bookings as $booking) {
             Mail::to($booking->user->email)->send(new RemindMail($booking));
