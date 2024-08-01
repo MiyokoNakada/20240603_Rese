@@ -30,7 +30,7 @@
 
 ## URL
 
-- 本番環境：http://http://54.252.248.143/
+- 本番環境：http://54.252.248.143/
   （URL でログイン後にトップページに遷移します)
 - 開発環境：http://localhost/
 - phpMyAdmin：http://localhost:8080/

@@ -58,7 +58,7 @@
                             <th class="my_bookings__table-label">Number</th>
                             <td class="my_bookings__table-item">
                                 <select class="booking-number" name="people_number">
-                                    <option value="{{ $booking->people_number }}">{{ $booking->people_number }}</option>
+                                    <option value="{{ $booking->people_number }}">{{ $booking->people_number }}人</option>
                                     @for ($i =1; $i <=10 ; $i++ ) <option value="{{ $i}}">{{$i}} </option>
                                         @endfor
                                 </select>

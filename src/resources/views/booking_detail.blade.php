@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <th class="my_bookings__table-label">Number</th>
-                    <td class="my_bookings__table-item">{{ $booking->people_number }}</td>
+                    <td class="my_bookings__table-item">{{ $booking->people_number }}人</td>
                 </tr>
                 <tr>
                     <th>----------</th>
